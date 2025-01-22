@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/v1";
+const CAR_API = process.env.REACT_APP_API_URL + "/cars";
 
-const CAR_API = API_URL + "/cars";
-
-const CAR_BOOKING_API = API_URL + "/booking";
+const CAR_BOOKING_API = process.env.REACT_APP_API_URL + "/booking";
 
 export const addCar = async (carObj) => {
   const { data } = await axios.post(CAR_API, carObj);
